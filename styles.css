@@ -55,3 +55,29 @@ button,input{font:inherit}.app{height:100dvh;overflow:hidden;position:relative;b
 .landscape-lock{display:none}
 @media (orientation:landscape) and (max-height:600px){.landscape-lock{display:grid;place-items:center;position:absolute;inset:0;z-index:100;background:#f4f2ed;text-align:center;padding:30px}.landscape-lock div{display:grid;gap:8px}.landscape-lock span{color:#6f7982}}
 @media(min-width:900px){.print-frame{top:50%}.bottom-nav{left:50%;right:auto;width:440px;transform:translateX(-50%)}.panel{left:auto;right:22px;width:410px}}
+/* v1.7 */
+.header-logo{display:flex;align-items:center;justify-content:center;gap:8px;color:#2e5f96}
+.header-logo img{width:30px;height:30px;object-fit:cover;border-radius:7px}
+.header-logo span{font-family:"Avenir Next","Helvetica Neue",-apple-system,sans-serif;font-size:14px;letter-spacing:.16em;font-weight:600;white-space:nowrap}
+.distance-pill{position:absolute;z-index:9;left:18px;bottom:100px;background:#2f67a2;color:#fff;border-radius:14px;padding:9px 12px;display:flex;align-items:center;gap:7px;box-shadow:0 5px 18px rgba(47,103,162,.24);font-size:13px;font-weight:700;pointer-events:none}
+.distance-pill svg{width:16px;height:16px}
+.segmented-setting{display:grid;grid-template-columns:1fr 1fr;background:#eceae5;border-radius:13px;padding:3px}
+.segmented-setting button,.style-choice-grid button{border:0;background:transparent;border-radius:10px;padding:10px;font-size:12px;font-weight:650;color:#56636d}
+.segmented-setting button.active,.style-choice-grid button.active{background:#3B6EA8;color:white;box-shadow:0 2px 8px rgba(59,110,168,.18)}
+.style-choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.style-choice-grid.four{grid-template-columns:repeat(4,1fr)}
+.style-choice-grid button{background:#fff;border:1px solid rgba(120,130,138,.12)}
+.history-search{font-size:12px;color:#78838b;background:#eceae5;border-radius:12px;padding:10px 12px;margin-bottom:10px}
+.history-list-sheet{display:grid;gap:9px}
+.history-card-sheet{width:100%;border:0;background:#fff;border-radius:15px;padding:10px;display:grid;grid-template-columns:58px 1fr 20px;gap:10px;align-items:center;text-align:left;box-shadow:0 2px 10px rgba(30,42,52,.05)}
+.history-card-sheet .history-thumb{width:58px;height:58px;border-radius:12px;background:#e8eef4;color:#3B6EA8;display:grid;place-items:center}
+.history-card-sheet .history-thumb svg{width:28px;height:28px}
+.history-card-sheet div:nth-child(2){display:grid;gap:3px}.history-card-sheet b{font-size:14px}.history-card-sheet span,.history-card-sheet small{font-size:11px;color:#77828a}.history-card-sheet .chev{font-size:22px}
+.preview-panel{max-height:88dvh}
+.svg-viewer{position:relative;height:52dvh;min-height:340px;border-radius:18px;overflow:hidden;border:1px solid rgba(120,130,138,.12);background:#fff}
+.checker{position:absolute;inset:0;background-color:#fff;background-image:linear-gradient(45deg,#eee 25%,transparent 25%),linear-gradient(-45deg,#eee 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#eee 75%),linear-gradient(-45deg,transparent 75%,#eee 75%);background-size:20px 20px;background-position:0 0,0 10px,10px -10px,-10px 0}
+.svg-render{position:absolute;inset:18px;display:grid;place-items:center}
+.svg-render svg{width:100%;height:100%;max-width:100%;max-height:100%;display:block}
+.preview-meta{display:flex;justify-content:space-between;margin:10px 2px 0;color:#68747d;font-size:12px}
+.export-action{display:flex;justify-content:center;align-items:center;gap:8px}
+.export-action svg{width:18px}

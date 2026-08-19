@@ -55,3 +55,14 @@ Upload every file from the unzipped archive directly to the root of the GitHub r
 
 ## v1.6.1 hotfix
 - Replaced unsupported Lucide `Gear` import with supported `Settings` icon so Vercel can build successfully.
+
+
+## v1.7
+- Selected minimalist one-line Route Studio logo direction in the header
+- Steel Blue #3 remains the primary brand color (`#3B6EA8`)
+- Settings now supports editable Units, Default Route Style, Default Print Area, Map Style, and History preference
+- Added live route-distance calculator in lower-left corner using selected units
+- History now opens as the same swipe-down bottom-sheet pattern as Route, Style, and Settings
+- Added SVG Preview viewer before export, with transparent checkerboard background and final export button
+- Export bubble now opens SVG Preview instead of downloading immediately
+- Minimum map zoom reduced further

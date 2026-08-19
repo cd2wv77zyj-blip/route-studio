@@ -18,3 +18,14 @@ The app includes the iOS Maps-inspired workspace, Web Mercator projection, 10-me
 ## Location-data note
 
 The browser cannot directly read an iPhone's historical device-location database. PWA v1 therefore uses sample coordinate data while keeping the rendering pipeline ready for a future approved location-data adapter and native Swift implementation.
+
+
+## v1.1
+- Draggable bottom sheet with collapsed/medium/expanded snap points
+- Live visual updates; preview status/button removed
+- Map-only pinch zoom; page pinch zoom disabled
+- Portrait orientation requested in PWA manifest with landscape fallback screen
+- Functional app menu
+- Functional visual map-layer chooser (Standard / Satellite / Hybrid)
+- Route rotation and zoom are applied to the map visualization as one geographic scene
+- Refined iOS-inspired glass controls and grouped settings

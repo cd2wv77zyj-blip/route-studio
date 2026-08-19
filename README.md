@@ -87,3 +87,9 @@ Upload every file from the unzipped archive directly to the root of the GitHub r
 ## v1.8.2 logo hotfix
 - Fixed the header logo by importing `route-studio-logo.png` through Vite so it is bundled into the production build.
 - No visual or functional changes beyond the missing header logo fix.
+
+
+## v1.8.3
+- Final header-logo sizing adjusted to match the approved mockup
+- Logo is larger and more visually prominent than v1.8.2, but slightly smaller than the first enlarged concept
+- No other UI or functional changes from v1.8.2

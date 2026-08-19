@@ -106,3 +106,19 @@ button,input{font:inherit}.app{height:100dvh;overflow:hidden;position:relative;b
   max-width:min(62vw,300px);
   object-fit:contain;
 }
+
+/* v1.8.3 approved header logo sizing */
+.header-logo{
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+}
+.header-logo img{
+  width:auto;
+  height:40px;
+  max-width:min(58vw,285px);
+  object-fit:contain;
+  border-radius:0;
+}

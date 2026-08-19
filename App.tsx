@@ -3,6 +3,7 @@ import {
   Check, Download, Eye, History, Layers, MapPin, Route as RouteIcon,
   Settings, SlidersHorizontal, X
 } from 'lucide-react'
+import routeStudioLogo from './route-studio-logo.png'
 import { sampleTrack } from './sample'
 import { douglasPeucker, filterNearby, fit, haversineMeters, mercator } from './geo'
 import { exportSvg, linePath } from './svg'
@@ -172,7 +173,7 @@ export default function App(){
     panelDrag.current=null
   }
 
-  const logo = <div className="header-logo"><img src="./route-studio-logo.png" alt="Route Studio"/></div>
+  const logo = <div className="header-logo"><img src={routeStudioLogo} alt="Route Studio"/></div>
 
   return <main className="app">
     <div className="landscape-lock"><div><strong>Route Studio is designed for portrait.</strong><span>Rotate your device to continue.</span></div></div>

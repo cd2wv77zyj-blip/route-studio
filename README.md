@@ -82,3 +82,8 @@ Upload every file from the unzipped archive directly to the root of the GitHub r
 - Rebuilt header logo from approved minimalist Option 1 one-line logo
 - Simplified manifest and Apple touch-icon references back to canonical root filenames
 - Added a cache-busting query to the Apple touch icon reference
+
+
+## v1.8.2 logo hotfix
+- Fixed the header logo by importing `route-studio-logo.png` through Vite so it is bundled into the production build.
+- No visual or functional changes beyond the missing header logo fix.

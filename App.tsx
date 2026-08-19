@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import {
-  Check, Download, Gear, History, Layers, MapPin, Route as RouteIcon,
+  Check, Download, Settings, History, Layers, MapPin, Route as RouteIcon,
   SlidersHorizontal, X
 } from 'lucide-react'
 import { sampleTrack } from './sample'
@@ -210,7 +210,7 @@ export default function App(){
         <button onClick={()=>openPanel('route')}><RouteIcon/><span>Route</span></button>
         <button onClick={()=>openPanel('style')}><SlidersHorizontal/><span>Style</span></button>
         <button onClick={()=>setPage('history')}><History/><span>History</span></button>
-        <button onClick={()=>openPanel('settings')}><Gear/><span>Settings</span></button>
+        <button onClick={()=>openPanel('settings')}><Settings/><span>Settings</span></button>
       </nav>
     </section> : <section className="history-page">
       <header className="history-header"><button onClick={()=>setPage('canvas')}>‹</button><h1>History</h1><div/></header>
@@ -268,7 +268,7 @@ export default function App(){
           </div>
           <div className="settings-section"><h3>Data & Privacy</h3>
             <button><span><History/> Save Route History</span><small>On</small></button>
-            <button><span><Gear/> Location Data</span><small>Local only</small></button>
+            <button><span><Settings/> Location Data</span><small>Local only</small></button>
           </div>
         </>}
 

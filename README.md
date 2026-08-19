@@ -51,3 +51,7 @@ Upload every file from the unzipped archive directly to the root of the GitHub r
 - Route geometry now renders in a fixed square coordinate scene to prevent aspect-ratio distortion
 - Added Apple touch icon reference and root-level icon paths
 - Settings focuses on app-wide defaults, map/display, and data/privacy rather than per-route styling
+
+
+## v1.6.1 hotfix
+- Replaced unsupported Lucide `Gear` import with supported `Settings` icon so Vercel can build successfully.

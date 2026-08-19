@@ -99,3 +99,73 @@ label>span{display:block;font-size:12px;color:#65717a;font-weight:600;margin:0 0
 }
 .reset-map{position:absolute;z-index:6;left:18px;top:max(78px,calc(env(safe-area-inset-top) + 62px));border:0;border-radius:16px;padding:8px 11px;background:rgba(250,250,250,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 4px 18px rgba(35,46,55,.13);color:#26333d;font-size:12px;font-weight:650}
 .gesture-hint{position:absolute;z-index:4;left:50%;transform:translateX(-50%);top:90px;background:rgba(250,250,250,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:999px;padding:6px 10px;font-size:11px;color:#63707a;pointer-events:none}
+
+/* v1.3 independent scene + print frame */
+.route-overlay{
+  position:absolute;
+  z-index:3;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:visible;
+}
+.print-frame{
+  position:absolute;
+  z-index:4;
+  left:50%;
+  top:43%;
+  transform:translate(-50%,-50%);
+  border:2px dashed rgba(37,55,68,.32);
+  border-radius:4px;
+  pointer-events:none;
+  background:rgba(255,255,255,.02);
+  transition:width .18s ease,height .18s ease;
+}
+.print-frame.freeform{transition:none}
+.frame-label{
+  position:absolute;
+  top:-24px;
+  left:0;
+  font-size:11px;
+  color:#63707a;
+  background:rgba(250,250,250,.78);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  padding:4px 7px;
+  border-radius:7px;
+}
+.frame-caption{
+  position:absolute;
+  left:8px;right:8px;bottom:8px;
+  text-align:center;
+  color:#153c66;
+  font-size:13px;
+  font-weight:600;
+}
+.frame-handle{
+  pointer-events:auto;
+  touch-action:none;
+  position:absolute;
+  right:-11px;
+  bottom:-11px;
+  width:25px;
+  height:25px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(30,43,52,.22);
+}
+.frame-handle:after{
+  content:"";
+  position:absolute;
+  width:8px;height:8px;
+  border-right:2px solid #5e6972;
+  border-bottom:2px solid #5e6972;
+  right:6px;bottom:6px;
+}
+.segmented.four{grid-template-columns:repeat(4,1fr)}
+.helper{margin:8px 2px 0;font-size:11px;color:#78828a}
+@media(min-width:900px){
+  .print-frame{left:44%;top:50%}
+}

@@ -36,3 +36,11 @@ The browser cannot directly read an iPhone's historical device-location database
 - Removed the explicit Rotate button
 - Export now uses the route's current pan/zoom/rotation state
 - Added Reset View for quickly returning to centered default framing
+
+## v1.3
+- Fixed the route clipping bug: route remains visible outside the dotted print border while composing
+- Decoupled geographic scene from the print-area overlay
+- Changing 1:1 / 3:1 / 4:5 no longer refits or resets the route
+- Added Freeform print area
+- Freeform frame can be resized from its lower-right corner
+- Route/map gestures continue behind the print frame

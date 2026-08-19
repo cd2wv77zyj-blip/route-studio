@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import {
-  Check, Download, Eye, Gear, History, Layers, MapPin, Route as RouteIcon,
+  Check, Download, Eye, History, Layers, MapPin, Route as RouteIcon,
   Settings, SlidersHorizontal, X
 } from 'lucide-react'
 import { sampleTrack } from './sample'
@@ -84,7 +84,8 @@ export default function App(){
     return total
   },[])
   const distanceValue=units==='mi' ? distanceMeters/1609.344 : distanceMeters/1000
-  const distanceLabel=`${distanceValue.toFixed(2)} ${units}`
+  const distanceDecimals=distanceValue>=10000?0:distanceValue>=1000?1:2
+  const distanceLabel=`${new Intl.NumberFormat('en-US',{minimumFractionDigits:distanceDecimals,maximumFractionDigits:distanceDecimals}).format(distanceValue)} ${units}`
 
   const dist=(a:React.Touch,b:React.Touch)=>Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)
   const angle=(a:React.Touch,b:React.Touch)=>Math.atan2(b.clientY-a.clientY,b.clientX-a.clientX)*180/Math.PI
@@ -171,10 +172,7 @@ export default function App(){
     panelDrag.current=null
   }
 
-  const logo = <div className="header-logo">
-    <img src="./app-icon-192.png" alt=""/>
-    <span>ROUTE STUDIO</span>
-  </div>
+  const logo = <div className="header-logo"><img src="./route-studio-logo.png" alt="Route Studio"/></div>
 
   return <main className="app">
     <div className="landscape-lock"><div><strong>Route Studio is designed for portrait.</strong><span>Rotate your device to continue.</span></div></div>
@@ -256,17 +254,37 @@ export default function App(){
             <label><span>End Date</span><div className="input-wrap"><input type="date" value={endDate} onChange={e=>setEndDate(e.target.value)}/></div></label>
             <label><span>End Time</span><div className="input-wrap"><input type="time" value={endTime} onChange={e=>setEndTime(e.target.value)}/></div></label>
           </div>
+          <div className="settings-section route-units">
+            <h3>Distance Units</h3>
+            <div className="segmented-setting">
+              <button className={units==='mi'?'active':''} onClick={()=>setUnits('mi')}>Miles</button>
+              <button className={units==='km'?'active':''} onClick={()=>setUnits('km')}>Kilometers</button>
+            </div>
+          </div>
           <button className="primary-action">Fetch Location Data</button>
         </>}
 
         {panel==='style'&&<>
-          <div className="style-preview"><svg viewBox="0 0 220 72"><path d="M10 55 C55 20 95 63 132 30 S190 20 210 12" fill="none" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round"/></svg></div>
+          <div className="style-preview"><svg viewBox="0 0 220 72"><path d="M10 55 C55 20 95 63 132 30 S190 20 210 12" fill="none" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeDasharray={defaultRouteStyle==='dotted'?'1 14':undefined}/></svg></div>
+          <div className="settings-section">
+            <h3>Route Style</h3>
+            <div className="style-choice-grid">
+              <button className={defaultRouteStyle==='smooth'?'active':''} onClick={()=>setDefaultRouteStyle('smooth')}>Smooth</button>
+              <button className={defaultRouteStyle==='straight'?'active':''} onClick={()=>setDefaultRouteStyle('straight')}>Straight</button>
+              <button className={defaultRouteStyle==='dotted'?'active':''} onClick={()=>setDefaultRouteStyle('dotted')}>Dotted</button>
+            </div>
+          </div>
           <div className="control-group">
             <label className="slider-control"><span><b>Line Width</b><em>{strokeWidth}px</em></span><input type="range" min="1" max="18" value={strokeWidth} onChange={e=>setStrokeWidth(+e.target.value)}/></label>
             <label className="row-control"><span><b>Color</b><small>Steel Blue</small></span><input className="color-well" type="color" value={stroke} onChange={e=>setStroke(e.target.value)}/></label>
             <label className="slider-control"><span><b>Simplification</b><em>{epsilon}m</em></span><input type="range" min="0" max="50" value={epsilon} onChange={e=>setEpsilon(+e.target.value)}/></label>
-            <label className="switch-control"><span>Smooth Curves</span><input type="checkbox" checked={smooth} onChange={e=>setSmooth(e.target.checked)}/></label>
-            <label className="switch-control"><span>Start & End Markers</span><input type="checkbox" checked={markers} onChange={e=>setMarkers(e.target.checked)}/></label>
+          </div>
+          <div className="settings-section text-setting-section">
+            <h3>Markers</h3>
+            <div className="segmented-setting">
+              <button className={markers?'active':''} onClick={()=>setMarkers(true)}>On</button>
+              <button className={!markers?'active':''} onClick={()=>setMarkers(false)}>Off</button>
+            </div>
           </div>
           <label className="caption"><span>Caption</span><input type="text" placeholder="Optional" value={caption} onChange={e=>setCaption(e.target.value)}/></label>
         </>}

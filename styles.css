@@ -81,3 +81,28 @@ button,input{font:inherit}.app{height:100dvh;overflow:hidden;position:relative;b
 .preview-meta{display:flex;justify-content:space-between;margin:10px 2px 0;color:#68747d;font-size:12px}
 .export-action{display:flex;justify-content:center;align-items:center;gap:8px}
 .export-action svg{width:18px}
+
+/* v1.8 finishing pass */
+.header-logo{height:34px;display:flex;align-items:center;justify-content:center;overflow:visible}
+.header-logo img{width:auto;height:30px;max-width:min(54vw,280px);object-fit:contain;border-radius:0}
+.distance-pill{
+  bottom:116px;
+  max-width:calc(100vw - 36px);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-variant-numeric:tabular-nums;
+  font-size:clamp(12px,3.6vw,15px);
+  padding:9px 13px;
+}
+.distance-pill span{white-space:nowrap}
+.route-units{margin-top:16px}
+.text-setting-section{margin-top:14px}
+
+/* v1.8.1 branding correction */
+.header-logo img{
+  height:32px;
+  width:auto;
+  max-width:min(62vw,300px);
+  object-fit:contain;
+}

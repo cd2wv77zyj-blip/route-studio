@@ -66,3 +66,19 @@ Upload every file from the unzipped archive directly to the root of the GitHub r
 - Added SVG Preview viewer before export, with transparent checkerboard background and final export button
 - Export bubble now opens SVG Preview instead of downloading immediately
 - Minimum map zoom reduced further
+
+
+## v1.8
+- Route and Style sheets now use the same text-choice/segmented-control language as Settings
+- Route sheet includes the selected distance units and stays synchronized with Settings
+- Style sheet exposes Smooth / Straight / Dotted and Markers On / Off as text choices
+- Distance pill moved upward, forced to one line, and formats very large distances with grouping separators
+- Header now uses the selected Option 1 minimalist one-line Route Studio logo as an actual image asset
+- PWA / Apple touch icon now uses the approved #3 Steel Blue icon artwork and unique filenames to reduce iOS cache collisions
+
+## v1.8.1
+- Rebuilt app icon assets from the approved Steel Blue #3 brush-route mockup
+- Removed legacy duplicate/wrong icon files
+- Rebuilt header logo from approved minimalist Option 1 one-line logo
+- Simplified manifest and Apple touch-icon references back to canonical root filenames
+- Added a cache-busting query to the Apple touch icon reference

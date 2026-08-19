@@ -29,3 +29,10 @@ The browser cannot directly read an iPhone's historical device-location database
 - Functional visual map-layer chooser (Standard / Satellite / Hybrid)
 - Route rotation and zoom are applied to the map visualization as one geographic scene
 - Refined iOS-inspired glass controls and grouped settings
+
+## v1.2
+- Full map multi-touch: one-finger pan, pinch zoom, and two-finger rotate
+- Fixed dotted print/SVG area stays in place while map + route move behind it
+- Removed the explicit Rotate button
+- Export now uses the route's current pan/zoom/rotation state
+- Added Reset View for quickly returning to centered default framing

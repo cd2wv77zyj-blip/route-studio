@@ -166,14 +166,12 @@ export default function App(){
         <div className="map-water water-a"/><div className="map-water water-b"/>
         <div className="map-road road-a"/><div className="map-road road-b"/><div className="map-road road-c"/>
         <div className="map-block block-a"/><div className="map-block block-b"/><div className="map-block block-c"/>
+        <svg className="route-scene" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-label="Route preview">
+          <path d={linePath(basePoints,smooth)} fill="none" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"/>
+          {markers&&basePoints[0]&&<circle cx={basePoints[0].x} cy={basePoints[0].y} r={strokeWidth*1.4+3} fill={stroke}/>}
+          {markers&&basePoints[basePoints.length-1]&&<circle cx={basePoints[basePoints.length-1].x} cy={basePoints[basePoints.length-1].y} r={strokeWidth*1.4+3} fill={stroke}/>}
+        </svg>
       </div>
-
-      {/* Route is deliberately NOT clipped by the frame. */}
-      <svg className="route-overlay" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-label="Route preview">
-        <path d={d} fill="none" stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"/>
-        {markers&&first&&<circle cx={first.x} cy={first.y} r={strokeWidth*1.4+3} fill={stroke}/>}
-        {markers&&last&&<circle cx={last.x} cy={last.y} r={strokeWidth*1.4+3} fill={stroke}/>}
-      </svg>
 
       <div className={`print-frame ${framePreset==='freeform'?'freeform':''}`}
         style={{width:`${frameSize.w}vw`,height:`${frameSize.h}vh`}}>

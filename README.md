@@ -44,3 +44,8 @@ The browser cannot directly read an iPhone's historical device-location database
 - Added Freeform print area
 - Freeform frame can be resized from its lower-right corner
 - Route/map gestures continue behind the print frame
+
+## v1.4
+- Fixed geographic registration bug: route and map now live inside the exact same transformed scene
+- Pan, pinch zoom, and rotation affect map + route as one unit
+- Print frame remains independent as a crop/composition guide

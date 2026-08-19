@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 import { Download, Layers, LocateFixed, Menu, Minus, Plus, RotateCcw, SlidersHorizontal } from 'lucide-react'
-import { sampleTrack } from './data/sample'
-import { douglasPeucker, filterNearby, fit, mercator, rotate } from './lib/geo'
-import { exportSvg, linePath } from './lib/svg'
+import { sampleTrack } from './sample'
+import { douglasPeucker, filterNearby, fit, mercator, rotate } from './geo'
+import { exportSvg, linePath } from './svg'
 import type { AspectRatio } from './types'
 
 const sizes:Record<AspectRatio,[number,number]>={square:[1000,1000],wide:[1500,500],tall:[800,1000]}

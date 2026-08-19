@@ -1,4 +1,4 @@
-import type { GPSPoint, XYPoint } from '../types'
+import type { GPSPoint, XYPoint } from './types'
 
 const R = 6378137
 

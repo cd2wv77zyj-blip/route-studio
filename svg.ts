@@ -1,4 +1,4 @@
-import type { XYPoint } from '../types'
+import type { XYPoint } from './types'
 
 const n=(v:number)=>Number(v.toFixed(2))
 

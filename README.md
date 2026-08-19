@@ -35,3 +35,19 @@ The browser prototype still uses sample coordinates. A PWA cannot directly read 
 This archive is **truly flat**. There are no folders inside it.
 
 Upload every file from the unzipped archive directly to the root of the GitHub repository. The app icon PNG files (`app-icon-192.png`, `app-icon-512.png`, and `app-icon-1024.png`) intentionally live at the repository root for iPhone/Safari compatibility.
+
+
+## v1.6
+- Refined full-map UI to match the approved mockup direction more closely
+- Removed top-left hamburger menu
+- Bottom navigation is now Route / Style / History / Settings with equal-weight icons
+- Route uses a minimalist route-line icon instead of a calendar
+- Style no longer uses a large blue floating circle
+- Export moved to a standalone icon bubble beside the print-size presets
+- Removed the “SVG Area” label
+- Added History page for previously worked routes
+- Route and Style bottom sheets can be dragged downward to dismiss, in addition to the X button
+- Map/route minimum zoom reduced substantially
+- Route geometry now renders in a fixed square coordinate scene to prevent aspect-ratio distortion
+- Added Apple touch icon reference and root-level icon paths
+- Settings focuses on app-wide defaults, map/display, and data/privacy rather than per-route styling
